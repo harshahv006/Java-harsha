@@ -1,0 +1,78 @@
+LEET CODE : 11
+class Solution {
+    public int maxArea(int[] height) {
+         int maxWater = 0;
+        int left = 0;
+        int right = height.length - 1;
+
+        while (left < right) {
+            int minHeight = Math.min(height[left], height[right]);
+            int width = right - left;
+            int area = minHeight * width;
+            maxWater = Math.max(maxWater, area);
+            if (height[left] < height[right]) {
+                left++;
+            } else {
+                right--;
+            }
+        }
+
+        return maxWater;
+    }
+}
+
+LEET CODE: 26
+import java.util.*;
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        if (nums.length == 0) return 0;
+
+        int i = 0;
+        for (int j = 1; j < nums.length; j++) {
+            if (nums[j] != nums[i]) {
+                i++;
+                nums[i] = nums[j];
+            }
+        }
+        return i + 1;
+    }
+     public static void main(String[] args) {
+        int[] nums = {1, 1, 2, 2, 3, 3, 4};
+
+        Solution sol = new Solution();
+        int length = sol.removeDuplicates(nums);
+
+        System.out.println("Array after removing duplicates:");
+        for (int i = 0; i < length; i++) {
+            System.out.print(nums[i] + " ");
+        }
+        System.out.println("\nNew length: " + length);
+    }
+
+}
+
+LEET CODE : 27
+class Solution {
+    public int removeElement(int[] nums, int val) {
+        int i = 0; 
+        for (int j = 0; j < nums.length; j++) {
+            if (nums[j] != val) {
+                nums[i] = nums[j]; 
+                i++;
+            }
+        }
+        return i; 
+    }
+}
+
+LEET CODE : 35
+class Solution {
+    public int searchInsert(int[] nums, int target) {
+        for(int i=0;i<nums.length;i++){
+            if(nums[i]>=target){
+                return i;
+            }
+    }
+    return nums.length;
+}
+}
