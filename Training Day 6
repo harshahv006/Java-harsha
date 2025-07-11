@@ -29,21 +29,21 @@ int main() {
 #include <stdio.h>
 
 int main() {
-    int num = 234; // You can change this to any number
+    int num = 234; 
     int sum = 0;
     int temp = num;
 
     while (temp > 0) {
-        int d = temp % 10;   // get last digit
-        sum += d * d;        // add square of digit to sum
-        temp /= 10;          // remove last digit
+        int d = temp % 10;  
+        sum += d * d;        
+        temp /= 10;          
     }
 
     printf("Sum of squares of digits of %d is %d\n", num, sum);
     return 0;
 }
 
-(3)
+(3) 
 #include <stdio.h>
 
 int main() {
@@ -65,7 +65,6 @@ int main() {
             return 0;
         }
     }
-
-    printf("%d is NOT a Happy Number (after 10 cycles)\n", num);
+    printf("%d is NOT a Happy Number\n", num);
     return 0;
 }
